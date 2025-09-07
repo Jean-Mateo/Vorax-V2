@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VORÃX — Hasta el último bocado</title>
+  <meta name="description" content="En VORÃX descubrirás lo auténtico de la cocina casera. Reserva por teléfono y disfruta nuestra carta. Hasta el último bocado." />
+  <link rel="icon" href="logo_vorax.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --fg:#f5f5f5; --muted:#c9c9c9; --max:1100px; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; 
+      background:#0a0a0a center center no-repeat fixed;
+      background-size: 1500px auto;
+      color:var(--fg);
+      font-family:'Cinzel', serif;
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 16px;}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(0,0,0,0.7); border-bottom:1px solid #222}
+    .nav{display:flex; align-items:center; gap:20px; padding:10px 0}
+    .logo{display:flex; align-items:center; gap:12px}
+    .logo img{width:44px; height:44px}
+    .logo strong{font-size:22px; letter-spacing:2px}
+    .spacer{flex:1}
+    .tabs a{padding:8px 12px; border-radius:999px; font-weight:600; opacity:.9}
+    .tabs a:hover{background:rgba(255,255,255,0.1)}
+    .mobile{display:none}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center; padding:48px 0}
+    .title{font-size:44px; line-height:1.1; margin:0 0 12px}
+    .subtitle{color:var(--muted); margin:0 0 8px}
+    .hero .logo-large{width:80%; height:auto; max-width:600px; margin:0 auto;} /* Logo adaptable */
+
+    /* Grid platos */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .card{border:1px solid #222; border-radius:var(--radius); overflow:hidden; background:rgba(0,0,0,0.6)}
+    .card img{aspect-ratio:4/3; object-fit:cover}
+    .card .p{padding:12px 14px; color:var(--muted)}
+
+    section{padding:48px 0}
+    h2{margin:0 0 16px; font-size:28px}
+
+    /* Reservas */
+    .reservas p{margin:10px 0}
+    .note{color:var(--muted)}
+    .badge{display:inline-block; border:1px solid #333; padding:4px 10px; border-radius:999px; margin-right:8px; background:rgba(0,0,0,0.6)}
+
+    /* Carta */
+    .cta{display:inline-block; background:#fff; color:#000; font-weight:700; padding:12px 18px; border-radius:12px; transition:transform .1s ease;}
+    .cta:hover{transform:translateY(-1px)}
+
+    /* Horario */
+    .horario{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .panel{border:1px solid #222; padding:16px 18px; border-radius:var(--radius); background:rgba(0,0,0,0.6)}
+
+    /* Footer */
+    footer{border-top:1px solid #222; padding:28px 0 60px; background:rgba(0,0,0,0.7)}
+    .foot{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
+    .foot small{color:var(--muted)}
+    .ig{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #333; border-radius:999px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr 1fr}
+      .horario{grid-template-columns:1fr}
+    }
+    @media (max-width:620px){
+      .tabs{display:none}
+      .mobile{display:block}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">
+        <img src="logo_vorax.png" alt="Logo VORÃX" />
+        <strong>VORÃX</strong>
+      </a>
+      <nav class="tabs">
+        <a href="#inicio">Inicio</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#carta">Carta</a>
+        <a href="#horario">Horario</a>
+      </nav>
+      <div class="spacer"></div>
+      <a class="mobile ig" href="https://www.instagram.com/soy_vorax/" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.5-.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+        <span>@soy_vorax</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="inicio">
+      <div class="hero">
+        <div>
+          <h1 class="title">Cocina casera, experiencia memorable</h1>
+          <p class="subtitle"><strong>VORÃX</strong> es el sueño hecho realidad de un cocinero con más de 17 años de experiencia. A lo largo de su trayectoria profesional, el arduo trabajo, la constancia, la dedicación y la creatividad lo acompañaron siempre. Durante esos años como colaborador, guardaba un anhelo muy especial: tener su propio restaurante, un espacio donde pudiera compartir y disfrutar todo lo aprendido.</p>
+          <div class="badge">📍 <a href="https://maps.google.com/?q=Calle+Ferrenal+4+Jaca" target="_blank">Calle Ferrenal 4, Jaca</a></div>
+          <div class="badge">☎︎ Reservas: <a href="tel:646441681">646 44 16 81</a></div>
+        </div>
+        <div>
+          <img class="logo-large" src="logo_vorax.png" alt="Logo VORÃX grande" />
+        </div>
+      </div>
+
+      <h2>Nuestros platos principales</h2>
+      <p class="subtitle">En nuestra casa <strong>VORÃX</strong> descubrirás lo auténtico de la Cocina casera y tendrás una experiencia que nunca olvidarás <strong>HASTA EL ÚLTIMO BOCADO</strong>.</p>
+      <div class="grid">
+        <article class="card">
+          <img src="Bravas Vorax.png" alt="Plato principal 1" />
+          <div class="p">Bravas VORÃX</div>
+        </article>
+        <article class="card">
+          <img src="Croquetas varias.png" alt="Plato principal 2" />
+          <div class="p">Croquetas VORÃX</div>
+        </article>
+        <article class="card">
+          <img src="Mejillones Vorax.png" alt="Plato principal 3" />
+          <div class="p">Mejillones VORÃX</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="reservas">
+      <h2>Cómo reservar en VORÃX</h2>
+      <p><strong>RESERVA ÚNICAMENTE VÍA TELEFÓNICA</strong></p>
+      <p>• Atenderemos sus solicitudes de reserva de <strong>10:30–13:00</strong> y de <strong>19:30–20:30</strong>.</p>
+      <p>• Las reservas pueden realizarse para los turnos de <strong>13:15</strong> y <strong>20:15</strong>. Fuera de esos dos turnos, según se vayan quedando libres las mesas, se irán ocupando por orden de llegada.</p>
+      <p>• <strong>Tel.</strong> <a href="tel:646441681">646 44 16 81</a></div></p>
+      <p class="note">Consejo: si el teléfono comunica, inténtelo de nuevo dentro de ese horario.</p>
+    </section>
+
+    <section id="carta">
+      <h2>Carta</h2>
+      <p>Consulta nuestra carta completa y novedades en <a href="https://www.instagram.com/soy_vorax/" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.5-.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+        <span>@soy_vorax.</span></p>
+        
+      <p>
+        <a class="cta" href="Carta.pdf" target="_blank">Ver carta</a>
+      </p>
+    </section>
+
+    <section id="horario">
+      <h2>Horarios VORÃX</h2>
+      <div class="horario">
+        <div class="panel">
+          <p><strong>Horario:</strong> 13:00 a 16:00 h y 20:00 a 23:00 h.</p>
+          <p><strong>Descanso semanal:</strong> los <strong>Martes</strong>.</p>
+        </div>
+        <div class="panel">
+          <p><strong>Dirección:</strong> Calle Ferrenal 4, Jaca</p>
+          <p><strong>Reservas:</strong> <a href="tel:646441681">646 44 16 81</a></p>
+          <p class="note">Síguenos para avisos y cambios puntuales de horario.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="logo_vorax.png" alt="Logo VORÃX en pie de página" style="width:48px;height:48px;opacity:.9"/>
+      <a class="ig" href="https://www.instagram.com/soy_vorax/" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6.5-.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+        <span>@soy_vorax</span>
+      </a>
+      <small>VORÃX — Calle Ferrenal 4 — Reservas <a href="tel:646441681">646 44 16 81</a></small>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+  </script>
+</body>
+</html>
